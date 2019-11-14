@@ -16,15 +16,17 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //instance dataBinding
-        var binding = DataBindingUtil.
-        setContentView<ActivitySplashScreenBinding>(this,R.layout.activity_splash_screen)
+        var binding = DataBindingUtil.setContentView<ActivitySplashScreenBinding>(
+            this,
+            R.layout.activity_splash_screen
+        )
         //instance ViewModel
         binding.viewModel = SplashViewModel()
         val viewModel = ViewModelProviders.of(this)
             .get(SplashViewModel::class.java)
         viewModel.liveData.observe(this, Observer {
-            when(it){
-                is SplashViewModel.SplashState.pindahHalaman->{
+            when (it) {
+                is SplashViewModel.SplashState.pindahHalaman -> {
                     startActivity<MainActivity>()
                     finish()
                 }

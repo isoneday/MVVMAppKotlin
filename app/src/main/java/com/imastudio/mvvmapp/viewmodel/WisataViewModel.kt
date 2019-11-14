@@ -9,38 +9,44 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class WisataViewModel :ViewModel() {
-    private val data= MutableLiveData<List<DataItem?>?>()
-    var status =MutableLiveData<Boolean>()
-    var progress =MutableLiveData<Int>()
+class WisataViewModel : ViewModel() {
+    private val data = MutableLiveData<List<DataItem?>?>()
+    var status = MutableLiveData<Boolean>()
+    var progress = MutableLiveData<Int>()
+    var showMsg = MutableLiveData<String>()
 
     init {
         getDataWisata()
     }
 
     private fun getDataWisata() {
-        status.value =true
-        progress.value=0
+        status.value = true
+        progress.value = 0
         InitRetrofit.getInstanceWisata().getWisata().enqueue(
-            object :Callback<ResponseWisata>{
+            object : Callback<ResponseWisata> {
                 override fun onFailure(call: Call<ResponseWisata>, t: Throwable) {
-               status.value=false
-                progress.value=1
-
+                    status.value = false
+                    progress.value = 1
+                    showMsg.value = t.localizedMessage
                 }
 
                 override fun onResponse(
                     call: Call<ResponseWisata>,
                     response: Response<ResponseWisata>
                 ) {
-                progress.value=1
-                    if (response.isSuccessful){
-                        status.value=false
+                    progress.value = 1
+                    if (response.isSuccessful) {
+                        status.value = false
                         var statuscode = response.body()?.statusCode
-                        if (statuscode==200){
+                        var msg = response.body()?.message
+                        if (statuscode == 200) {
                             data.value = response.body()?.data
-                        }else{
-                            status.value=true
+                            showMsg.value = msg
+
+                        } else {
+                            status.value = true
+                            showMsg.value = msg
+
                         }
                     }
 
@@ -49,13 +55,20 @@ class WisataViewModel :ViewModel() {
             }
         )
     }
-    fun setDataToView() : MutableLiveData<List<DataItem?>?>{
+
+    fun setMsg(): MutableLiveData<String> {
+        return showMsg
+    }
+
+    fun setDataToView(): MutableLiveData<List<DataItem?>?> {
         return data
     }
-    fun setStatus(): MutableLiveData<Boolean>{
+
+    fun setStatus(): MutableLiveData<Boolean> {
         return status
     }
-    fun setProgress(): MutableLiveData<Int>{
+
+    fun setProgress(): MutableLiveData<Int> {
         return progress
     }
 }
