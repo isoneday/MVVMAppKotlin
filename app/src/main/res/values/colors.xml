@@ -3,4 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="btnSignIn">#1fbad6</color>
+    <color name="btnRegister">#83838c</color>
+
+
+    <color name="bottom_text">#6b6b76</color>
+    <color name="md_white_1000">#ffffff</color>
 </resources>

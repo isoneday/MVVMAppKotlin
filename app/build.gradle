@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -22,14 +23,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    dataBinding{
-        enabled=true
+    dataBinding {
+        enabled = true
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
@@ -49,7 +50,7 @@ dependencies {
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$project_arch"
     implementation "androidx.lifecycle:lifecycle-runtime:$project_arch"
     implementation "androidx.lifecycle:lifecycle-extensions:$project_arch"
-// Anko Commons
+    // Anko Commons
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation "org.jetbrains.anko:anko:$anko_version"
     //restapi
@@ -64,5 +65,6 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     implementation 'com.google.android.material:material:1.0.0'
 
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 
 }
