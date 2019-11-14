@@ -1,4 +1,4 @@
-package com.imastudio.mvpapp.helper
+package com.imastudio.mvvmapp.helper
 
 class Helper {
     companion object {

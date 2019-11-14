@@ -1,7 +1,7 @@
-package com.imastudio.mvpapp.network
+package com.imastudio.mvvmapp.network
 
-import com.imastudio.mvpapp.model.modelauth.ResponseAuth
-import com.imastudio.mvpapp.model.modelwisata.ResponseWisata
+import com.imastudio.mvvmapp.model.modelauth.ResponseAuth
+import com.imastudio.mvvmapp.model.modelwisata.ResponseWisata
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

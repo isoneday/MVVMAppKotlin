@@ -1,4 +1,4 @@
-package com.imastudio.mvpapp.model.modelwisata
+package com.imastudio.mvvmapp.model.modelwisata
 
 import android.os.Parcel
 import android.os.Parcelable

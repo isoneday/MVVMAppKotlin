@@ -1,8 +1,9 @@
-package com.imastudio.mvpapp.network
+package com.imastudio.mvvmapp.network
 
 import com.google.gson.GsonBuilder
-import com.imastudio.mvpapp.helper.Helper.Companion.BASE_URL
-import com.imastudio.mvpapp.helper.Helper.Companion.BASE_WISATAURL
+import com.imastudio.mvvmapp.helper.Helper.Companion.BASE_URL
+import com.imastudio.mvvmapp.helper.Helper.Companion.BASE_WISATAURL
+import com.imastudio.mvvmapp.network.RestApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

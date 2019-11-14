@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.imastudio.mvpapp.model.modelwisata.DataItem
+import com.imastudio.mvvmapp.model.modelwisata.DataItem
 import com.imastudio.mvvmapp.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.tampilanwisata.view.*
