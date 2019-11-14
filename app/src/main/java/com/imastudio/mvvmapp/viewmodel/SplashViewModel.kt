@@ -22,5 +22,6 @@ class SplashViewModel : ViewModel() {
 
     sealed class SplashState{
         class pindahHalaman: SplashState()
+
     }
 }
